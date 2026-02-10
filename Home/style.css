@@ -1,0 +1,251 @@
+/* Add google font */
+@import url('https://fonts.googleapis.com/css2?family=Knewave&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;1,100;1,200;1,300;1,400;1,500&display=swap');
+/* Import font từ Google Fonts */
+
+*{
+    margin: 0;                 /* Xóa margin mặc định của trình duyệt */
+    padding: 0;                /* Xóa padding mặc định */
+    box-sizing: border-box;    /* Tính width/height bao gồm padding + border */
+    font-family: "Poppins", sans-serif; /* Font mặc định cho toàn web */
+    
+}
+
+:root{
+    /* Color - biến màu dùng chung */
+    --yellow-color:#FBEF76;
+    --orange-color:#F27024;
+    --red-color:#FA5C5C;
+    --white-color:#FCF8F8;
+    --black-color:#0F172A;
+
+    /* Font size - biến kích thước chữ */
+    --font-size-s: 0.9rem;   
+    --font-size-n: 1rem;     
+    --font-size-m: 1.12rem;  
+    --font-size-l: 1.5rem;   
+    --font-size-xl: 2rem;    
+    --font-size-xxl: 2.3rem; 
+    --font-size-xxxl: 3.0rem; 
+
+    /* Font weight - độ đậm chữ */
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    /* Border radius - bo góc */
+    --border-radius-s: 8px;
+    --border-radius-m: 30px;
+    --border-radius-circle: 50%;
+
+    /* Giới hạn chiều rộng nội dung */
+    --site-max-width: 1300px;
+}
+
+
+html{
+    scroll-behavior: smooth;
+}
+
+/* styling for whole site */
+ul {
+    list-style: none;          /* Bỏ dấu chấm trước thẻ li */
+}
+
+a {
+    text-decoration: none;     /* Bỏ gạch chân link */
+}
+
+button{
+    cursor: pointer;           /* Khi hover hiện con trỏ tay */
+    border: none;              /* Bỏ viền mặc định */
+    background: none;          /* Bỏ nền mặc định */
+}
+
+.section-content{
+    margin: 0 auto;            /* Căn giữa theo chiều ngang */
+    padding: 0 20px;           /* Khoảng cách 2 bên */
+    max-width: var(--site-max-width); /* Không vượt quá 1300px */
+}
+
+/* navbar styling */
+header{
+    position: fixed;           /* Header luôn cố định trên màn hình */
+    width: 100%;               /* Chiếm toàn bộ chiều ngang */
+    z-index: 5;                /* Nằm trên các phần khác */
+}
+
+header .navbar {
+    display: flex;             /* Dàn hàng ngang */
+    padding: 20px;             /* Khoảng cách trong */
+    align-items: center;       /* Căn giữa theo trục dọc */
+    justify-content: space-between; /* Logo trái - menu phải */
+}
+
+.navbar .nav-logo .logo-text{
+    color: var(--white-color); /* Màu chữ logo */
+    font-size: var(--font-size-l);
+    font-weight: var(--font-weight-semibold);
+}
+
+
+.navbar .nav-menu {
+    display: flex;             /* Menu nằm ngang */
+    gap: 15px;                 /* Khoảng cách giữa các item */
+}
+
+.navbar .nav-menu .nav-link{
+    color: var(--black-color);
+    padding: 10px 18px;        /* Vùng bấm rộng hơn */
+    font-size: var(--font-size-l);
+    border-radius: var(--border-radius-m); /* Bo tròn nút */
+
+}
+
+
+#menu-open-button,
+#menu-close-button{
+    display: none;             /* Ẩn nút menu trên desktop */
+}
+
+.nav-logo{
+    height: 70px;              /* Chiều cao logo */
+    border-radius: 20px; 
+    display: flex;
+}
+
+.nav-logo img{
+    width: 100%;               /* Ảnh logo vừa khung */
+}
+
+/* background section */
+.hero-section{
+    min-height: 100vh;         /* Chiều cao full màn hình */
+    background-size: cover;            /* Khớp màn hình, không méo */
+    background-position: center;       /* Căn giữa ảnh */
+    background-repeat: no-repeat;      /* Không lặp */
+    position: relative;                /* Làm mốc cho layer khác */
+}
+
+.hero-section .section-content{
+    font-family: cursive;      /* Font riêng cho hero */
+    text-align: center;        /* Căn giữa chữ */
+}
+
+.hero-details{
+    position: absolute;        /* Định vị tự do */
+    z-index: 2;   /* Luôn nằm trên background */
+    top: 40%;                  /* Cách trên 40% */
+    left: 50%;                 /* Cách trái 50% */
+    transform: translate(-50%, -50%); /* Căn giữa tuyệt đối */
+}
+
+/* Title Main */
+.title{
+    font-size: clamp(32px, 6vw, 60px); /* Responsive chữ theo màn hình */
+    color: var(--black-color);
+    margin-bottom: 2px;
+}
+
+.subtitle{
+    font-size: clamp(20px, 4vw, 50px); /* Chữ co giãn */
+    color: var(--orange-color);
+    font-family: "Roboto", sans-serif;
+ 
+}
+.title,
+.subtitle{
+    line-height: 1.1;
+}
+.text{
+    color: #969dad;
+    max-width: 520px;          /* Không quá rộng */
+}
+
+.text span{
+    display: block;            /* Mỗi span xuống dòng */
+}
+
+/* Responsive cho mobile */
+@media screen and (max-width: 900px){
+    :root{
+        --font-size-m: 0.95rem;  
+        --font-size-l: 1.1rem;   
+        --font-size-xl: 1.3rem;    
+        --font-size-xxl: 1.6rem; 
+    }
+
+    /* HERO */
+    .hero-section{
+        background-position: top center;
+    }
+
+    .hero-details{
+        width: 100%;
+        padding: 0 16px;
+        top: 42%;
+    }
+
+    .text{
+        margin: 8px auto 0;
+        text-align: center;
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    /* MENU BUTTON */
+    #menu-open-button,
+    #menu-close-button{
+        display: block;
+        font-size: 1.4rem;
+        cursor: pointer;
+        color: var(--black-color);
+    }
+
+    /* OVERLAY */
+    body.show-mobie-menu header::before{
+        content: "";
+        position: fixed;
+        inset: 0;
+        backdrop-filter: blur(6px);
+        background: rgba(0,0,0,0.25);
+        z-index: 4;
+    }
+
+    /* NAV MENU MOBILE */
+    .navbar .nav-menu{
+        position: fixed;
+        left: -260px;
+        top: 0;
+        width: 260px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 90px;
+        background: var(--white-color);
+        box-shadow: 8px 0 25px rgba(0,0,0,0.12);
+
+        transition: left 0.35s ease;
+        z-index: 5;
+    }
+
+    body.show-mobie-menu .navbar .nav-menu{
+        left: 0;
+    }
+
+    .navbar #menu-close-button{
+        position: absolute;
+        right: 22px;
+        top: 22px;
+    }
+
+    /* LINK MOBILE */
+    .navbar .nav-menu .nav-link{
+        display: block;
+        margin-top: 14px;
+        font-size: 1.05rem;   /* HOME / LOGIN nhỏ lại */
+        font-weight: 500;
+        color: var(--black-color);
+    }
+}

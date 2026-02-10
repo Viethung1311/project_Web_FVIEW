@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="spinv1.css">
+  <link rel="stylesheet" href="spin-button.css">
+  <title>Spin Wheel</title>
+</head>
+<body>
+
+<a href="../Home/index.html" class="back">Back</a>
+
+<div id="wrapper">
+  <div id="pointer"></div>
+  <div id="wheel">
+    <div id="inner-wheel">
+      <div class="sec"><span class="number">1</span></div>
+      <div class="sec"><span class="number">2</span></div>
+      <div class="sec"><span class="number">3</span></div>
+      <div class="sec"><span class="number">4</span></div>
+      <div class="sec"><span class="number">5</span></div>
+      <div class="sec"><span class="number">6</span></div>
+      <div class="sec"><span class="number">7</span></div>
+      <div class="sec"><span class="number">8</span></div>
+    </div>
+
+    <div id="spin">
+      <div id="inner-spin"></div>
+    </div>
+
+    <div id="shine"></div>
+  </div>
+  <div id="txt"></div>
+  <!-- Popup kết quả -->
+<div id="popup-overlay">
+  <div id="popup">
+    <div class="popup-content">
+      <div class="result-number"></div>
+      <div class="result-icon"></div>
+      <button id="close-popup">Đóng</button>
+    </div>
+  </div>
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="spinv1.js"></script>
+
+</body>
+</html>
