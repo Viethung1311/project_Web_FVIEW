@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="icon.css">
     <link rel="stylesheet" href="Background.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="auth-nav.css">
     <!-- linking font awesome for icon -->
     <title>FView</title>
 </head>
@@ -40,8 +41,25 @@
                     <a href="#app" class="nav-link">App</a>
                 </li><li class="nav-item">
                     <a href="../spin/spinv1.html" class="nav-link">Play</a>
-                </li><li class="nav-item">
-                    <a href="../login/login.html" class="nav-link">Login</a>
+                </li>
+
+                <!-- AUTH NAV: Login hoặc Avatar tuỳ trạng thái -->
+                <li class="nav-item" id="nav-auth">
+                    <!-- Mặc định hiện Login, JS sẽ ẩn/hiện tuỳ token -->
+                    <a href="../login/login.html" class="nav-link" id="nav-login-btn">Login</a>
+
+                    <!-- Avatar + Dropdown (ẩn khi chưa login) -->
+                    <div class="nav-avatar-wrap" id="nav-avatar-wrap" style="display:none">
+                        <img src="" alt="avatar" class="nav-avatar" id="nav-avatar-img">
+                        <div class="nav-dropdown" id="nav-dropdown">
+                            <div class="nav-dropdown-header">
+                                <span id="nav-dropdown-name">username</span>
+                            </div>
+                            <a href="#" class="nav-dropdown-item" id="nav-change-avatar-btn"><i class="fa-solid fa-image"></i> Đổi avatar</a>
+                            <a href="#" class="nav-dropdown-item"><i class="fa-solid fa-user"></i> Profile</a>
+                            <a href="#" class="nav-dropdown-item" id="nav-logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+                        </div>
+                    </div>
                 </li>
             </ul>
 
@@ -76,6 +94,20 @@
     </main>
 
 
+    <!-- POPUP CHỌN AVATAR -->
+    <div class="avatar-popup-overlay" id="avatar-popup-overlay">
+        <div class="avatar-popup">
+            <div class="avatar-popup-header">
+                <h3>Chọn Avatar</h3>
+                <button class="avatar-popup-close" id="avatar-popup-close"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="avatar-grid" id="avatar-grid">
+                <!-- JS sẽ render các ảnh vào đây -->
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
+    <script src="auth-nav.js"></script>
 </body>
 </html>
